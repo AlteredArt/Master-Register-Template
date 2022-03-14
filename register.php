@@ -1,5 +1,14 @@
-<?php include("includes/handlers/register-handler.php")?>
-<?php include("includes/handlers/login-handler.php")?>
+<?php 
+	include("includes/handlers/register-handler.php");
+	include("includes/handlers/login-handler.php");
+ 	include("includes/classes/Account.php");
+
+
+	$account = new Account();
+	$account->register();
+
+?>
+
 
 
 <!DOCTYPE html>

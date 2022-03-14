@@ -20,6 +20,10 @@
     }
 
 
+    
+
+
+
     if(isset($_POST['registerButton'])) {
         //Register button was pressed
         $username = sanitizeFormUsername($_POST['username']);
@@ -35,6 +39,8 @@
         $password = sanitizeFormPassword($_POST['password']);
 
         $password2 = sanitizeFormPassword($_POST['password2']);
+
+        
 
     }
 
