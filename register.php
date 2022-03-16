@@ -1,6 +1,7 @@
 <?php 
 	
  	include("includes/classes/Account.php");
+	include("includes/classes/Constants.php");
 
 	$account = new Account();
 
@@ -42,7 +43,7 @@
 		<form id="registerForm" action="register.php" method="POST">
 			<h2>Create your free account</h2>
 			<p>
-				<?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
+				<?php echo $account->getError(Constants::$usernameCharacters); ?>
 				<label for="username">Username</label>
 				<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" required>
 			</p>
@@ -67,12 +68,14 @@
 			</p>
 
 			<p>
-				<?php echo $account->getError("Your emails don't mat"); ?>
 				<label for="email2">Confirm email</label>
 				<input id="email2" name="email2" type="email" placeholder="e.g. bart@gmail.com" required>
 			</p>
 
 			<p>
+				<?php echo $account->getError("Your passwords don't match"); ?>
+				<?php echo $account->getError("Your password can only contain letters and numbers."); ?>
+				<?php echo $account->getError("Your password must be greater than 5 and thess tha 30 characters in length"); ?>
 				<label for="password">Password</label>
 				<input id="password" name="password" type="password" placeholder="Your password" required>
 			</p>

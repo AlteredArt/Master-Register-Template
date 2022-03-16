@@ -32,7 +32,7 @@ class Account {
 
     private function validateUsername($un){
         if (strlen($un) > 25 || strlen($un) < 5) {
-            array_push($this->errorArray, "Your username must be greater than 5 and thess tha 25 characters in length");
+            array_push($this->errorArray, Constants::$usernameCharacters);
             return;
         }
         //Todo check is username exists
@@ -40,7 +40,7 @@ class Account {
 
     private function validateFirstName($fn){
         if (strlen($fn) > 25 || strlen($fn) < 2) {
-            array_push($this->errorArray, "Your first name must be greater than 2 and thess tha 25 characters in length");
+            array_push($this->errorArray, Constants::$usernameCharacters);
             return;
         }
     }
@@ -53,12 +53,12 @@ class Account {
     }
 
     private function validateEmails($em1, $em2){
-        if($em != $em2){
+        if($em1 != $em2){
             array_push($this->errorArray, "Your emails don't match");
             return;
         }
 
-        if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+        if(!filter_var($em1, FILTER_VALIDATE_EMAIL)) {
             array_push($this->errorArray, "Email is invalid");
             return;
         }
@@ -67,7 +67,7 @@ class Account {
 
     }
 
-    private function validatePasswords($px1, $pw2){
+    private function validatePasswords($pw1, $pw2){
         if($pw1 != $pw2){
             array_push($this->errorArray, "Your passwords don't match");
             return;
@@ -78,7 +78,7 @@ class Account {
             return;
         }
 
-        if (strlen($pw) > 30 || strlen($pw) < 5) {
+        if (strlen($pw1) > 30 || strlen($pw1) < 5) {
             array_push($this->errorArray, "Your password must be greater than 5 and thess tha 30 characters in length");
             return;
         }
