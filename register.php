@@ -1,12 +1,14 @@
+//Registrar Page
 <?php
+	//include accounts and constants files
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
-
+	//initiate a new account class
 	$account = new Account();
 
 	include("includes/handlers/register-handler.php");
 	include("includes/handlers/login-handler.php");
-
+	//saves name in case of errors
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {
 			echo $_POST[$name];
@@ -19,8 +21,8 @@
 	<title>Welcome to Slotify!</title>
 </head>
 <body>
-
 	<div id="inputContainer">
+		//login form
 		<form id="loginForm" action="register.php" method="POST">
 			<h2>Login to your account</h2>
 			<p>
@@ -37,7 +39,7 @@
 		</form>
 
 
-
+		//registration form
 		<form id="registerForm" action="register.php" method="POST">
 			<h2>Create your free account</h2>
 			<p>
