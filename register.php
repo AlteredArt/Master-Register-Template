@@ -1,10 +1,11 @@
-//Registrar Page
+<!-- Registrar Page -->
 <?php
+	include("includes/config.php");
 	//include accounts and constants files
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
 	//initiate a new account class
-	$account = new Account();
+	$account = new Account($con);
 
 	include("includes/handlers/register-handler.php");
 	include("includes/handlers/login-handler.php");
@@ -22,7 +23,7 @@
 </head>
 <body>
 	<div id="inputContainer">
-		//login form
+		<!-- login form -->
 		<form id="loginForm" action="register.php" method="POST">
 			<h2>Login to your account</h2>
 			<p>
@@ -39,7 +40,7 @@
 		</form>
 
 
-		//registration form
+		<!-- registration form -->
 		<form id="registerForm" action="register.php" method="POST">
 			<h2>Create your free account</h2>
 			<p>
