@@ -1,14 +1,14 @@
 <!-- Registrar Page -->
 <?php
 	include("includes/config.php");
-	//include accounts and constants files
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
-	//initiate a new account class
+
 	$account = new Account($con);
 
 	include("includes/handlers/register-handler.php");
 	include("includes/handlers/login-handler.php");
+	
 	//saves name in case of errors
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {
@@ -19,7 +19,7 @@
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to Spoofify!</title>
 </head>
 <body>
 	<div id="inputContainer">
@@ -45,6 +45,7 @@
 			<h2>Create your free account</h2>
 			<p>
 				<?php echo $account->getError(Constants::$usernameCharacters); ?>
+				<?php echo $account->getError(Constants::$usernameTaken); ?>
 				<label for="username">Username</label>
 				<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('username') ?>" required>
 			</p>
@@ -64,6 +65,8 @@
 			<p>
 				<?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
 				<?php echo $account->getError(Constants::$emailInvalid); ?>
+				<?php echo $account->getError(Constants::$usernameTaken); ?>
+
 				<label for="email">Email</label>
 				<input id="email" name="email" type="email" placeholder="e.g. bart@gmail.com" value="<?php getInputValue('email') ?>" required>
 			</p>
