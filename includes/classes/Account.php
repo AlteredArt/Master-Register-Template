@@ -1,11 +1,10 @@
 <!-- Account class -->
 <?php
+
 	class Account {
-		// variables
+		
 		private $errorArray;
 		private $con;
-
-		// functions
 
 		// constructor method 
 		public function __construct($con) {
@@ -30,6 +29,7 @@
 			}
 		}
 
+		
 		// get error function
 		public function getError($error) {
 			// if this parameter is not in this instance of error array then set error to none
