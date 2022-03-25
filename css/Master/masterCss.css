@@ -1,4 +1,7 @@
-
+.inputContainer{
+  display: flex;
+  flex-direction: row;
+}
 
 
 

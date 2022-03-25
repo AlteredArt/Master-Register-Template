@@ -1,7 +1,7 @@
-@import "/Css/Master/masterReset.css";
-@import "/Css/Master/masterCss.css";
-@import "/Css/MediaQuery/master576.css";
-@import "/Css/MediaQuery/master768.css";
-@import "/Css/MediaQuery/master992.css";
-@import "/Css/MediaQuery/master1200.css";
-@import "/Css/MediaQuery/master1400.css";
+@import "./masterReset";
+@import "./masterCss.css";
+/* @import "../MediaQuery/master1200"; */
+/* @import "./MediaQuery/master768.css"; */
+/* @import "./MediaQuery/master992.css"; */
+/* @import "./MediaQuery/master1200.css"; */
+/* @import "./MediaQuery/master1400.css"; */
