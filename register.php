@@ -17,11 +17,16 @@
 	}
 ?>
 
+<style>
+    <?php include './css/Master/import.css'; ?>
+</style>
+
 <html>
 <head>
 	<title>Welcome to Spoofify!</title>
 </head>
 <body>
+	<h3 class="invisible m5" style="font-size: 6rem;">helljjo</h3>
 	<div id="inputContainer">
 		<!-- login form -->
 		<form id="loginForm" action="register.php" method="POST">

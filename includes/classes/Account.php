@@ -31,7 +31,7 @@
 
 		public function login($un, $pw) {
 			$pw = md5($pw);
-			$query = mysqli_query($this=->con, "SELECT * FROM users WHERE username='$un' and password='$pw'" );
+			$query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' and password='$pw'" );
 
 			if(mysqli_num_row($query) == 1){
 				return true;
