@@ -1,18 +1,30 @@
-<!-- Account class -->
 <?php
-
 	class Account {
-		
-		private $errorArray;
-		private $con;
 
-		// constructor method 
+		private $con;
+		private $errorArray;
+
 		public function __construct($con) {
 			$this->con = $con;
 			$this->errorArray = array();
 		}
 
-		// register function
+		public function login($un, $pw) {
+
+			$pw = md5($pw);
+
+			$query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' AND password='$pw'");
+
+			if(mysqli_num_rows($query) == 1) {
+				return true;
+			}
+			else {
+				array_push($this->errorArray, Constants::$loginFailed);
+				return false;
+			}
+
+		}
+
 		public function register($un, $fn, $ln, $em, $em2, $pw, $pw2) {
 			$this->validateUsername($un);
 			$this->validateFirstName($fn);
@@ -20,54 +32,35 @@
 			$this->validateEmails($em, $em2);
 			$this->validatePasswords($pw, $pw2);
 
-			// if the error array of this instance is empty run insert into database details
 			if(empty($this->errorArray) == true) {
+				//Insert into db
 				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 			}
 			else {
 				return false;
 			}
+
 		}
 
-		public function login($un, $pw) {
-			$pw = md5($pw);
-			$query = mysqli_query($this->con, "SELECT * FROM users WHERE username='$un' and password='$pw'" );
-
-			if(mysqli_num_row($query) == 1){
-				return true;
-			} else {
-				array_push($this ->errorArray, CONSTANTS::$loginFailed);
-				return false;
-			}
-		}
-
-		
-		// get error function
 		public function getError($error) {
-			// if this parameter is not in this instance of error array then set error to none
 			if(!in_array($error, $this->errorArray)) {
 				$error = "";
 			}
-			// else return error message
 			return "<span class='errorMessage'>$error</span>";
 		}
 
-
-
-		// insert user detail method
-		private function insertUserDetails($un, $fn, $ln, $em, $pw){
-			// take in password variable and encrypt it with md5 
+		private function insertUserDetails($un, $fn, $ln, $em, $pw) {
 			$encryptedPw = md5($pw);
-			$profilePic = "assets/images/profile-pics/profile_pic.jpg";
+			$profilePic = "assets/images/profile-pics/head_emerald.png";
 			$date = date("Y-m-d");
 
 			$result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
+
 			return $result;
 		}
 
-		// validate username method
 		private function validateUsername($un) {
-			// if the string length of username is under 25 or under, push this error into array
+
 			if(strlen($un) > 25 || strlen($un) < 5) {
 				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
@@ -106,10 +99,9 @@
 				return;
 			}
 
-			
 			$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
-			if(mysqli_num_rows($checkEmailQuery) != 0){
-				array_push($this->errorArray, CONSTANTS::$emailTaken);
+			if(mysqli_num_rows($checkEmailQuery) != 0) {
+				array_push($this->errorArray, Constants::$emailTaken);
 				return;
 			}
 
