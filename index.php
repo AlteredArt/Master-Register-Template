@@ -14,11 +14,11 @@ else {
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to BLANK!</title>
 </head>
 
 <body>
-	Hello!
+	BLANK!
 </body>
 
 </html>

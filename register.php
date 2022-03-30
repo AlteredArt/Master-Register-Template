@@ -17,7 +17,7 @@
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to BLANK !</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
@@ -57,11 +57,11 @@
 					<p>
 						<?php echo $account->getError(Constants::$loginFailed); ?>
 						<label for="loginUsername">Username</label>
-						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername') ?>" required>
+						<input id="loginUsername" name="loginUsername" type="text" placeholder="Your Username" value="<?php getInputValue('loginUsername') ?>" required>
 					</p>
 					<p>
 						<label for="loginPassword">Password</label>
-						<input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+						<input id="loginPassword" name="loginPassword" type="password" placeholder="Your Password" required>
 					</p>
 
 					<button type="submit" name="loginButton">LOG IN</button>
@@ -133,12 +133,12 @@
 			</div>
 
 			<div id="loginText">
-				<h1>Get great music, right now</h1>
-				<h2>Listen to loads of songs for free</h2>
+				<h1>Enter Title Here</h1>
+				<h2>Now enter a subtitle</h2>
 				<ul>
-					<li>Discover music you'll fall in love with</li>
-					<li>Create your own playlists</li>
-					<li>Follow artists to keep up to date</li>
+					<li>Follow up with text.</li>
+					<li>Follow up with text.</li>
+					<li>Follow up with text.</li>
 				</ul>
 			</div>
 
