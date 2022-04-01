@@ -32,15 +32,9 @@ body {
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */color:#fff;}
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:    #fff; opacity:  1;}
-::-moz-placeholder { /* Mozilla Firefox 19+ */color:    #fff;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #fff;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #fff;
-}
+::-moz-placeholder { /* Mozilla Firefox 19+ */color:    #fff; opacity:  1;}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #fff;}
+::-ms-input-placeholder { /* Microsoft Edge */ color: #fff;}
 
 #inputContainer {
     width: 400px;
@@ -49,9 +43,7 @@ body {
     border-right: 1px solid #999;
 }
 
-#inputContainer h2 {
-	text-align: center;
-}
+#inputContainer h2 {text-align: center;}
 
 #inputContainer input[type="text"],
 #inputContainer input[type="email"],
@@ -85,9 +77,7 @@ body {
     width: 100%;
 }
 
-#inputContainer button:hover {
-	cursor: pointer;
-}
+#inputContainer button:hover {cursor: pointer;}
 
 .hasAccountText span {
 	font-weight: bold;
@@ -95,14 +85,9 @@ body {
     cursor: pointer;
 }
 
-.hasAccountText {
-	text-align: center;
-}
+.hasAccountText {text-align: center;}
 
-#registerForm,
-#loginForm {
-	display: none;
-}
+#registerForm,#loginForm {display: none;}
 
 #loginText {
     padding: 45px;
@@ -115,13 +100,9 @@ body {
     font-weight: bold;
 }
 
-#loginText h2 {
-    margin: 35px 0;
-}
+#loginText h2 {margin: 35px 0;}
 
-#loginText ul {
-    padding: 0;
-}
+#loginText ul {padding: 0;}
 
 #loginText li {
     font-size: 20px;
